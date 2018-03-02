@@ -1,11 +1,11 @@
 <!--index.wxml-->
-  <scroll-view class="scroll" scroll-y="true" scroll-top="{{scrollTop}}" scroll-into-view="#{{words.length === 0 ? 0 : words.length - 1}}" lower-threshold="40">
+  <scroll-view class="scroll" scroll-y="true" scroll-top="{{scrollTop}}" scroll-into-view="index-{{words.length === 0 ? 0 : words.length - 1}}" lower-threshold="40">
   <div wx:for-index="idx" wx:for="{{words}}">
-    <div id="#{{idx}}" wx:if="{{item.sender == 'ai'}}" class="leftd">
+    <div id="index-{{idx}}" wx:if="{{item.sender == 'ai'}}" class="leftd">
       <div class="leftd" style="padding-top: 12px; margin-right: 2px"><image style="width: 30px; height: 30px;" src="../../1.jpg" /></div>
       <div class="speech left"><rich-text nodes="{{item.parsed_content}}"></rich-text></div>
     </div>
-    <div id="#{{idx}}" wx:if="{{item.sender == 'user'}}" class="rightd">
+    <div id="index-{{idx}}" wx:if="{{item.sender == 'user'}}" class="rightd">
       <div class="rightd" style="padding-top: 12px; margin-left: 2px"><image
       src="{{userInfo.avatarUrl}}" style="width: 36px; height: 36px;"></image></div>
       <div class="speech right"><rich-text nodes="{{item.title}}"></rich-text></div>
@@ -14,8 +14,8 @@
   </scroll-view>
 
   <div class="footer">
-    <div style='border-radius: 1px; float:left;border: 1px solid gray; width:79%;'>
-      <input rows="1" style="height: 45px;" value='{{word}}'  bindinput="userInput">{{input}}</input>
+    <div style='border-radius: 1px; float:left;border: 1px solid #D3D3D3; width:79%;'>
+      <input rows="1" style="height: 45px; padding-left: 4px;" value='{{word}}'  bindinput="userInput">{{input}}</input>
     </div>
     <div style="float:right;width:20%;">
       <button bindtap="bindViewTap">发送</button>

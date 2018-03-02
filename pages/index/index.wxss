@@ -137,7 +137,7 @@ div .left:after {
 .rightd {
  clear: both;
  float: right;
- margin-right: 10px;
+ margin-right: 1px;
 }
 
 .leftd_h{
